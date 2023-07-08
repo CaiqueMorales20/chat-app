@@ -1,10 +1,10 @@
 // Imports
-import { signInWithPopup, signOut } from "firebase/auth";
+import { signInWithPopup, signInWithRedirect, signOut } from "firebase/auth";
 import { auth, provider } from "./configs";
 
 // Functions
-export const signInWithGoogle = () => {
-	signInWithPopup(auth, provider);
+export const signInWithGoogle = async () => {
+	await signInWithPopup(auth, provider);
 };
 
 export const signOutFunction = () => {

@@ -1,10 +1,11 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { collection, getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
 	apiKey: "AIzaSyBbOqCJKYMunAaGu-7PCE4-G77o7WBYF-o",
-	authDomain: "chat-app-111103.firebaseapp.com",
+	authDomain: "caiquemorales.com",
 	projectId: "chat-app-111103",
 	storageBucket: "chat-app-111103.appspot.com",
 	messagingSenderId: "528927645895",
@@ -16,3 +17,5 @@ const firebaseConfig = {
 export const firebaseApp = initializeApp(firebaseConfig);
 export const auth = getAuth(firebaseApp);
 export const provider = new GoogleAuthProvider();
+export const db = getFirestore(firebaseApp);
+export const collectionMessages = collection(db, "messages");
