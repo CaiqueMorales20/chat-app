@@ -1,19 +1,24 @@
 // Imports
-import { signInWithPopup, signInWithRedirect, signOut } from "firebase/auth";
+import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "./configs";
 
 // Functions
-export const signInWithGoogle = async () => {
-	await signInWithPopup(auth, provider);
+export const GoogleAuth = async () => {
+	const authNew = await signInWithPopup(auth, provider);
+	return authNew;
 };
 
-export const signOutFunction = () => {
-	signOut(auth)
-		.then(() => {
-			// Sign-out successful.
-			console.log("deslogado");
-		})
-		.catch((error) => {
-			console.log(error);
-		});
+export const signInWithGoogle = async () => {
+	const authNew = await GoogleAuth();
+	console.log(authNew);
+};
+
+export const signOut = () => {
+	auth.currentUser ? auth.signOut() : console.log("nao tem ninguem logado fio");
+};
+
+export const checkUser = () => {
+	auth.currentUser
+		? console.log(auth.currentUser)
+		: console.log("nao tem ninguem logado fio");
 };

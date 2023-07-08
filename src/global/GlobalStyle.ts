@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   body{
     line-height: 1.6;
+    background: #262626;
   }
   h1,h2,h3,h4,h5,h6{
     line-height: 1;
