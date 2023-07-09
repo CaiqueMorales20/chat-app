@@ -1,5 +1,8 @@
+// Imports
+import { auth } from "../../firebase/configs";
+
 // Styled Components
-import { Image, MessageS, Text } from "./style";
+import { Image, MessageS, Text, TextContainer } from "./style";
 
 // Types
 import { MessageProps } from "./types";
@@ -8,9 +11,12 @@ import { MessageProps } from "./types";
 export const Message = (props: MessageProps) => {
 	// Rendering
 	return (
-		<MessageS>
+		<MessageS user={props.uid === auth.currentUser?.uid ? true : false}>
 			<Image src={props.photoURL ? props.photoURL : ""} />
-			<Text>{props.text}</Text>
+			<TextContainer>
+				<Text>{props.text}</Text>
+				<Text>{props.messageId}</Text>
+			</TextContainer>
 		</MessageS>
 	);
 };

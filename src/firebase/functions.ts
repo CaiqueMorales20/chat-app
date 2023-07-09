@@ -11,6 +11,7 @@ export const GoogleAuth = async () => {
 export const signInWithGoogle = async () => {
 	const authNew = await GoogleAuth();
 	console.log(authNew);
+	location.reload();
 };
 
 export const signOut = () => {
@@ -19,6 +20,6 @@ export const signOut = () => {
 
 export const checkUser = () => {
 	auth.currentUser
-		? console.log(auth.currentUser)
+		? console.log(auth.currentUser.uid)
 		: console.log("nao tem ninguem logado fio");
 };
