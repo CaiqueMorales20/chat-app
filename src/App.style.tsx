@@ -55,8 +55,10 @@ export const SendBtn = styled.button`
 `;
 
 export const Image = styled.img`
-	object-fit: cover;
+	width: 2.5rem;
 	height: 100%;
+	display: flex;
+	justify-content: center;
 `;
 
 export const ButtonImage = styled.img`
