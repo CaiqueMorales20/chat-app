@@ -54,11 +54,19 @@ export const SendBtn = styled.button`
 	cursor: pointer;
 `;
 
-export const Image = styled.img`
+export const ImageContainer = styled.div`
 	width: 2.5rem;
-	height: 100%;
+	height: 1rem;
 	display: flex;
 	justify-content: center;
+	height: 100%;
+	background: #6985fc;
+	align-items: center;
+`;
+
+export const Image = styled.img`
+	width: 1.25rem;
+	height: 1.25rem;
 `;
 
 export const ButtonImage = styled.img`

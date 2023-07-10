@@ -21,6 +21,7 @@ import {
 	AppS,
 	ButtonArea,
 	ButtonImage,
+	ImageContainer,
 	ButtonS,
 	Image,
 	InputContainer,
@@ -88,7 +89,9 @@ function App() {
 							value={messageWriting}
 						/>
 						<SendBtn onClick={() => sendMessage()}>
-							<Image src={SendIcon} />
+							<ImageContainer>
+								<Image src={SendIcon} />
+							</ImageContainer>
 						</SendBtn>
 					</InputContainer>
 					<ButtonArea>
