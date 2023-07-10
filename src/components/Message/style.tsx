@@ -17,10 +17,11 @@ export const MessageS = styled.div<MessageProps>`
 	flex-direction: ${(props) => props.user && "row-reverse"};
 `;
 
-export const TextContainer = styled.div`
+export const TextContainer = styled.div<MessageProps>`
 	background-color: #6884ff;
 	padding: 1em;
-	border-radius: 0.5em 0.5em 0em 0.5em;
+	border-radius: ${(props) =>
+		props.user ? "0.5em 0.5em 0em 0.5em" : "0.5em 0.5em 0.5em 0em"};
 `;
 
 export const Text = styled.p`

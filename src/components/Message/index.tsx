@@ -1,4 +1,5 @@
 // Imports
+import { useEffect } from "react";
 import { auth } from "../../firebase/configs";
 
 // Styled Components
@@ -13,7 +14,7 @@ export const Message = (props: MessageProps) => {
 	return (
 		<MessageS user={props.uid === auth.currentUser?.uid ? true : false}>
 			<Image src={props.photoURL ? props.photoURL : ""} />
-			<TextContainer>
+			<TextContainer user={props.uid === auth.currentUser?.uid ? true : false}>
 				<Text>{props.text}</Text>
 			</TextContainer>
 		</MessageS>

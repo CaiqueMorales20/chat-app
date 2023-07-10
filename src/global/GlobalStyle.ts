@@ -9,6 +9,9 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
+  html,body{
+    scroll-behavior: smooth;
+  }
   body{
     line-height: 1.6;
     background: #1d1f2b;

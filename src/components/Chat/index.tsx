@@ -1,6 +1,6 @@
 // Imports
 import { useCollectionData } from "react-firebase-hooks/firestore";
-import { auth, collectionMessages } from "../../firebase/configs";
+import { collectionMessages } from "../../firebase/configs";
 import { orderBy, query } from "firebase/firestore";
 
 // Imported Components
@@ -31,7 +31,8 @@ export const Chat = () => {
 					return (
 						<Message
 							text={item.text}
-							uid={auth.currentUser?.uid}
+							name={item.name}
+							uid={item.uid}
 							key={index}
 							photoURL={item.photoURL}
 							messageId={item.messageId}

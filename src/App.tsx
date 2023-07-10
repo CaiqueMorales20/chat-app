@@ -64,11 +64,13 @@ function App() {
 		if (messageWriting.length < 1) return;
 		await setDoc(doc(db, "messages", newId), {
 			text: messageWriting,
+			name: auth.currentUser?.displayName,
 			photoURL: auth.currentUser?.photoURL,
 			createdAt: serverTimestamp(),
 			uid: auth.currentUser?.uid,
 			id: newId,
 		});
+		window.scrollTo(0, document.body.scrollHeight);
 
 		setMessageWriting("");
 	};
