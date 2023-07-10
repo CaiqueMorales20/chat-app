@@ -11,6 +11,8 @@ export const GlobalStyle = createGlobalStyle`
   }
   html,body{
     scroll-behavior: smooth;
+    max-height: 100vh;
+    overflow: hidden;
   }
   body{
     line-height: 1.6;

@@ -7,7 +7,7 @@ import { orderBy, query } from "firebase/firestore";
 import { Message } from "../Message";
 
 // Styled Components
-import { ChatS, ChatTitle } from "./style";
+import { ChatS } from "./style";
 
 // Functional Component
 export const Chat = () => {
@@ -25,7 +25,6 @@ export const Chat = () => {
 	// Rendering
 	return (
 		<ChatS>
-			<ChatTitle>Conversa</ChatTitle>
 			{messages &&
 				messages.map((item, index) => {
 					return (

@@ -27,6 +27,7 @@ import {
 	InputContainer,
 	InputS,
 	SendBtn,
+	ChatTitle,
 } from "./App.style";
 
 // Images
@@ -70,7 +71,6 @@ function App() {
 			uid: auth.currentUser?.uid,
 			id: newId,
 		});
-		window.scrollTo(0, document.body.scrollHeight);
 
 		setMessageWriting("");
 	};
@@ -81,6 +81,7 @@ function App() {
 			{/* <button onClick={checkUser}>Ver usuario</button> */}
 			{auth.currentUser ? (
 				<>
+					<ChatTitle>Conversa</ChatTitle>
 					<Chat />
 					<InputContainer>
 						<InputS

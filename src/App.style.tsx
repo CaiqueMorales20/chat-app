@@ -3,14 +3,23 @@ import { styled } from "styled-components";
 
 // Styled Components
 export const AppS = styled.div`
-	padding-block: 4em;
+	padding-block: 2em;
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	margin-inline: auto;
 	align-items: center;
 	width: min(40rem, 90vw);
-	gap: 4rem;
+	gap: 2rem;
+`;
+
+export const ChatTitle = styled.h1`
+	font-size: 3rem;
+	color: #ffffff;
+
+	@media screen and (min-width: 768px) {
+		margin-bottom: 1em;
+	}
 `;
 
 export const ButtonArea = styled.div`

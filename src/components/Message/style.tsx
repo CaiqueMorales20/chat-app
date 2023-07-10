@@ -26,6 +26,7 @@ export const TextContainer = styled.div<MessageProps>`
 
 export const Text = styled.p`
 	color: #fefefe;
+	word-wrap: wrap;
 `;
 
 export const Image = styled.img`
