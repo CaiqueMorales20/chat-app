@@ -1,5 +1,4 @@
 // Imports
-import { useEffect } from "react";
 import { auth } from "../../firebase/configs";
 
 // Styled Components
