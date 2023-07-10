@@ -10,7 +10,9 @@ type MessageProps = {
 export const MessageS = styled.div<MessageProps>`
 	border-radius: 0.5em;
 	display: flex;
+	width: 100%;
 	align-items: flex-end;
+	justify-self: flex-start;
 	gap: 0.4rem;
 	flex-direction: ${(props) => props.user && "row-reverse"};
 `;

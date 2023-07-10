@@ -10,6 +10,8 @@ import {
 } from "firebase/firestore";
 import { signInWithGoogle, signOut } from "./firebase/functions";
 import { useState } from "react";
+import { useCollectionData } from "react-firebase-hooks/firestore";
+import { useUpdateEffect } from "./utils/useUpdateEffect";
 
 // Imported Components
 import { Chat } from "./components/Chat";
@@ -18,16 +20,18 @@ import { Chat } from "./components/Chat";
 import {
 	AppS,
 	ButtonArea,
+	ButtonImage,
 	ButtonS,
 	Image,
 	InputContainer,
 	InputS,
+	SendBtn,
 } from "./App.style";
 
 // Images
 import SendIcon from "./assets/img/send.png";
-import { useCollectionData } from "react-firebase-hooks/firestore";
-import { useUpdateEffect } from "./utils/useUpdateEffect";
+import GoogleIcon from "./assets/img/google.png";
+import LogoutIcon from "./assets/img/logout.png";
 
 // Functional Component
 function App() {
@@ -50,12 +54,13 @@ function App() {
 
 	useUpdateEffect(() => {
 		let undefiendLastMessage: any | undefined = lastMessage;
+		if (undefiendLastMessage == undefined) return setNewId("1");
 		let prevId = parseInt(undefiendLastMessage[0].id) + 1;
 		setNewId(prevId.toString());
 	}, [lastMessage, newId]);
 
-	const sendMessage = async (e: React.SyntheticEvent) => {
-		e.preventDefault();
+	const sendMessage = async () => {
+		if (messageWriting.length < 1) return;
 		await setDoc(doc(db, "messages", newId), {
 			text: messageWriting,
 			photoURL: auth.currentUser?.photoURL,
@@ -71,25 +76,36 @@ function App() {
 	return (
 		<AppS>
 			{/* <button onClick={checkUser}>Ver usuario</button> */}
-			<Chat />
-			<form onSubmit={sendMessage}>
-				<InputContainer>
-					<InputS
-						onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-							setMessageWriting(e.currentTarget.value)
-						}
-						placeholder="Digite sua mensagem..."
-						value={messageWriting}
-					/>
-					<button type="submit">
-						<Image src={SendIcon} />
-					</button>
-				</InputContainer>
-			</form>
-			<ButtonArea>
-				<ButtonS onClick={signInWithGoogle}>Google Login</ButtonS>
-				<ButtonS onClick={signOut}>Sair</ButtonS>
-			</ButtonArea>
+			{auth.currentUser ? (
+				<>
+					<Chat />
+					<InputContainer>
+						<InputS
+							onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+								setMessageWriting(e.currentTarget.value)
+							}
+							placeholder="Digite sua mensagem..."
+							value={messageWriting}
+						/>
+						<SendBtn onClick={() => sendMessage()}>
+							<Image src={SendIcon} />
+						</SendBtn>
+					</InputContainer>
+					<ButtonArea>
+						<ButtonS onClick={signOut}>
+							<ButtonImage src={LogoutIcon} />
+							Sair
+						</ButtonS>
+					</ButtonArea>
+				</>
+			) : (
+				<ButtonArea>
+					<ButtonS onClick={signInWithGoogle}>
+						<ButtonImage src={GoogleIcon} />
+						Google Login
+					</ButtonS>
+				</ButtonArea>
+			)}
 		</AppS>
 	);
 }

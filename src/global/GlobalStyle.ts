@@ -25,4 +25,10 @@ export const GlobalStyle = createGlobalStyle`
     display: inline-block;
     text-decoration: none;
   }
+  button,
+  input{
+    outline: none;
+    border: none;
+    background: transparent;
+  }
 `;

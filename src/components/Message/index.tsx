@@ -15,7 +15,6 @@ export const Message = (props: MessageProps) => {
 			<Image src={props.photoURL ? props.photoURL : ""} />
 			<TextContainer>
 				<Text>{props.text}</Text>
-				<Text>{props.messageId}</Text>
 			</TextContainer>
 		</MessageS>
 	);
