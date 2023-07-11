@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 
 // Styled Components
 export const AppS = styled.div`
-	padding-block: 2em;
+	padding-block: 4em;
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;

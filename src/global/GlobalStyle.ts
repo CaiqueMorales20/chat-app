@@ -11,8 +11,18 @@ export const GlobalStyle = createGlobalStyle`
   }
   html,body{
     scroll-behavior: smooth;
-    max-height: 100vh;
-    overflow: hidden;
+
+    
+	&::-webkit-scrollbar {
+		width: 0.7rem;
+		background-color: #303247;
+		border-radius: 0.5rem;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: #434664;
+		border-radius: 0.5rem;
+	}
   }
   body{
     line-height: 1.6;

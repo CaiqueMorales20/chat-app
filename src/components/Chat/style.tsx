@@ -9,7 +9,7 @@ export const ChatS = styled.div`
 	align-items: center;
 	gap: 2rem;
 	width: min(40rem, 90vw);
-	height: 60vh;
+	min-height: 50vh;
 	overflow: auto;
 	margin-inline: auto;
 	padding-right: 1em;
