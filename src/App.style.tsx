@@ -3,23 +3,20 @@ import { styled } from "styled-components";
 
 // Styled Components
 export const AppS = styled.div`
-	padding-block: 4em;
-	min-height: 100vh;
+	padding-block: 1.5em;
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	margin-inline: auto;
 	align-items: center;
-	width: min(40rem, 90vw);
+	justify-content: center;
+	width: min(60rem, 90vw);
 	gap: 2rem;
 `;
 
 export const ChatTitle = styled.h1`
-	font-size: 3rem;
+	font-size: 2.5rem;
 	color: #ffffff;
-
-	@media screen and (min-width: 768px) {
-		margin-bottom: 1em;
-	}
 `;
 
 export const ButtonArea = styled.div`
@@ -39,6 +36,7 @@ export const ButtonS = styled.button`
 	cursor: pointer;
 	gap: 0.5rem;
 	width: 100%;
+	font-size: 0.8rem;
 `;
 
 export const InputContainer = styled.div`

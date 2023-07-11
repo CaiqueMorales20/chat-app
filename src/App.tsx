@@ -81,7 +81,7 @@ function App() {
 			{/* <button onClick={checkUser}>Ver usuario</button> */}
 			{auth.currentUser ? (
 				<>
-					<ChatTitle>Conversa</ChatTitle>
+					<ChatTitle>Conversation</ChatTitle>
 					<Chat />
 					<InputContainer>
 						<InputS

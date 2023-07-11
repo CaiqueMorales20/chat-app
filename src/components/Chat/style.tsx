@@ -8,8 +8,8 @@ export const ChatS = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	gap: 2rem;
-	width: min(40rem, 90vw);
-	min-height: 50vh;
+	min-height: 40vh;
+	width: 100%;
 	overflow: auto;
 	margin-inline: auto;
 	padding-right: 1em;

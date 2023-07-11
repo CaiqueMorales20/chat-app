@@ -10,9 +10,9 @@ type MessageProps = {
 export const MessageS = styled.div<MessageProps>`
 	border-radius: 0.5em;
 	display: flex;
-	width: 100%;
 	align-items: flex-end;
-	justify-self: flex-start;
+	justify-self: flex-end;
+	width: 100%;
 	gap: 0.4rem;
 	flex-direction: ${(props) => props.user && "row-reverse"};
 `;
@@ -20,6 +20,8 @@ export const MessageS = styled.div<MessageProps>`
 export const TextContainer = styled.div<MessageProps>`
 	background-color: #6884ff;
 	padding: 1em;
+	max-width: 80%;
+	justify-self: flex-end;
 	border-radius: ${(props) =>
 		props.user ? "0.5em 0.5em 0em 0.5em" : "0.5em 0.5em 0.5em 0em"};
 `;
