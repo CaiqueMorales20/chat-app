@@ -88,7 +88,7 @@ function App() {
 							onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
 								setMessageWriting(e.currentTarget.value)
 							}
-							placeholder="Digite sua mensagem..."
+							placeholder="Type your message..."
 							value={messageWriting}
 						/>
 						<SendBtn onClick={() => sendMessage()}>
@@ -100,7 +100,7 @@ function App() {
 					<ButtonArea>
 						<ButtonS onClick={signOut}>
 							<ButtonImage src={LogoutIcon} />
-							Sair
+							Logout
 						</ButtonS>
 					</ButtonArea>
 				</>
